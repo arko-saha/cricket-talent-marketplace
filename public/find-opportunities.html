@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Opportunities - CricketTalent</title>
+    <meta name="description" content="Discover cricket opportunities - trials, club openings, and scholarships">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-green-50 via-blue-50 to-green-50 min-h-screen">
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-to-br from-green-500 to-blue-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">CT</span>
+                    </div>
+                    <span class="text-xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+                        CricketTalent
+                    </span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-green-600 transition-colors font-medium">Home</a>
+                    <a href="find-talent.html" class="text-gray-700 hover:text-green-600 transition-colors font-medium">Find Talent</a>
+                    <a href="find-opportunities.html" class="text-green-600 hover:text-green-700 transition-colors font-medium border-b-2 border-green-600 pb-1">Find Opportunities</a>
+                    <a href="#" class="text-gray-700 hover:text-green-600 transition-colors font-medium">Mentorship</a>
+                </div>
+
+                <!-- Auth Buttons -->
+                <div class="flex items-center space-x-4">
+                    <a href="login.html" class="hidden md:inline-block text-gray-700 hover:text-green-600 transition-colors font-medium">Login</a>
+                    <a href="signup.html" class="px-4 py-2 bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-full font-medium hover:shadow-lg transition-all hover:scale-105">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-8">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                    <span class="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+                        Find Your Next Opportunity
+                    </span>
+                </h1>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Discover trials, club openings, and scholarship opportunities across the UK
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="pb-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <!-- Category Tabs -->
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <button class="px-6 py-3 bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-full font-semibold hover:shadow-lg transition">
+                    All Opportunities
+                </button>
+                <button class="px-6 py-3 bg-white text-gray-700 rounded-full font-semibold hover:bg-gray-50 transition">
+                    Trials
+                </button>
+                <button class="px-6 py-3 bg-white text-gray-700 rounded-full font-semibold hover:bg-gray-50 transition">
+                    Club Openings
+                </button>
+                <button class="px-6 py-3 bg-white text-gray-700 rounded-full font-semibold hover:bg-gray-50 transition">
+                    Academies
+                </button>
+                <button class="px-6 py-3 bg-white text-gray-700 rounded-full font-semibold hover:bg-gray-50 transition">
+                    Scholarships
+                </button>
+            </div>
+
+            <!-- Results -->
+            <div class="space-y-6">
+                <!-- Opportunity Card 1 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
+                    <div class="p-6 md:p-8">
+                        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                            <div class="flex-1">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <span class="px-4 py-1 bg-green-100 text-green-800 rounded-full text-sm font-semibold">Trial</span>
+                                    <span class="px-4 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold">Premium County</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-2">County U19 Fast Bowling Trial</h3>
+                                <p class="text-gray-600 mb-4">Essex Cricket Club is hosting trials for promising fast bowlers aged 16-19. This is a unique opportunity to showcase your skills in front of county coaches and scouts.</p>
+                                
+                                <div class="flex flex-wrap gap-6 mb-4">
+                                    <div class="flex items-center text-gray-600">
+                                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        </svg>
+                                        <span class="text-sm">Chelmsford, Essex</span>
+                                    </div>
+                                    <div class="flex items-center text-gray-600">
+                                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        </svg>
+                                        <span class="text-sm">Posted: 3 days ago</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-wrap gap-4">
+                                    <div class="bg-gray-50 px-4 py-2 rounded-lg">
+                                        <div class="text-sm text-gray-600">Vacancies</div>
+                                        <div class="text-lg font-bold text-gray-900">3 spots</div>
+                                    </div>
+                                    <div class="bg-gray-50 px-4 py-2 rounded-lg">
+                                        <div class="text-sm text-gray-600">Age Range</div>
+                                        <div class="text-lg font-bold text-gray-900">16-19 years</div>
+                                    </div>
+                                    <div class="bg-gray-50 px-4 py-2 rounded-lg">
+                                        <div class="text-sm text-gray-600">Days Left</div>
+                                        <div class="text-lg font-bold text-orange-600">12 days</div>
+                                    </div>
+                                    <div class="bg-gray-50 px-4 py-2 rounded-lg">
+                                        <div class="text-sm text-gray-600">Applicants</div>
+                                        <div class="text-lg font-bold text-gray-900">47 applied</div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4">
+                                    <div class="text-sm text-gray-600 mb-2">Looking for:</div>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">Fast Bowler</span>
+                                        <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">Right-Arm</span>
+                                        <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">Left-Arm</span>
+                                        <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">Emerging Talent</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="md:w-48 flex-shrink-0">
+                                <button class="w-full px-6 py-4 bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-xl font-semibold hover:shadow-lg transition hover:scale-105 mb-3">
+                                    Apply Now
+                                </button>
+                                <button class="w-full px-6 py-3 border-2 border-green-600 text-green-600 rounded-xl font-semibold hover:bg-green-50 transition">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Opportunity Card 2 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
+                    <div class="p-6 md:p-8">
+                        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                            <div class="flex-1">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <span class="px-4 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold">Club Opening</span>
+                                    <span class="px-4 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-semibold">All-Rounder</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-2">Premier League Opening - Middle Order Batsman</h3>
+                                <p class="text-gray-600 mb-4">London Cricket Club (Premier Division) is seeking an experienced middle-order batsman with bowling ability. Competitive salary and facilities provided.</p>
+                                
+                                <div class="flex flex-wrap gap-6 mb-4">
+                                    <div class="flex items-center text-gray-600">
+                                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                        </svg>
+                                        <span class="text-sm">London, UK</span>
+                                    </div>
+                                    <div class="flex items-center text-gray-600">
+                                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        </svg>
+                                        <span class="text-sm">Posted: 5 days ago</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-wrap gap-4">
+                                    <div class="bg-gray-50 px-4 py-2 rounded-lg">
+                                        <div class="text-sm text-gray-600">Vacancies</div>
+                                        <div class="text-lg font-bold text-gray-900">1 spot</div>
+                                    </div>
+                                    <div class="bg-gray-50 px-4 py-2 rounded-lg">
+                                        <div class="text-sm text-gray-600">Age Range</div>
+                                        <div class="text-lg font-bold text-gray-900">22+ years</div>
+                                    </div>
+                                    <div class="bg-gray-50 px-4 py-2 rounded-lg">
+                                        <div class="text-sm text-gray-600">Days Left</div>
+                                        <div class="text-lg font-bold text-orange-600">18 days</div>
+                                    </div>
+                                    <div class="bg-gray-50 px-4 py-2 rounded-lg">
+                                        <div class="text-sm text-gray-600">Applicants</div>
+                                        <div class="text-lg font-bold text-gray-900">32 applied</div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4">
+                                    <div class="text-sm text-gray-600 mb-2">Looking for:</div>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">Batsman</span>
+                                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">All-Rounder</span>
+                                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">Experience Required</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="md:w-48 flex-shrink-0">
+                                <button class="w-full px-6 py-4 bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-xl font-semibold hover:shadow-lg transition hover:scale-105 mb-3">
+                                    Apply Now
+                                </button>
+                                <button class="w-full px-6 py-3 border-2 border-green-600 text-green-600 rounded-xl font-semibold hover:bg-green-50 transition">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Opportunity Card 3 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
+                    <div class="p-6 md:p-8">
+                        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                            <div class="flex-1">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <span class="px-4 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-semibold">Academy</span>
+                                    <span class="px-4 py-1 bg-green-100 text-green-800 rounded-full text-sm font-semibold">U16 Development</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-2">Manchester Cricket Academy U16 Development Program</h3>
+                                <p class="text-gray-600 mb-4">Join our elite development program for players aged 13-16. World-class coaching, state-of-the-art facilities, and pathway to county cricket.</p>
+                                
+                                <div class="flex flex-wrap gap-6 mb-4">
+                                    <div class="flex items-center text-gray-600">
+                                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                        </svg>
+                                        <span class="text-sm">Manchester, UK</span>
+                                    </div>
+                                    <div class="flex items-center text-gray-600">
+                                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        </svg>
+                                        <span class="text-sm">Posted: 1 week ago</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-wrap gap-4">
+                                    <div class="bg-gray-50 px-4 py-2 rounded-lg">
+                                        <div class="text-sm text-gray-600">Vacancies</div>
+                                        <div class="text-lg font-bold text-gray-900">8 spots</div>
+                                    </div>
+                                    <div class="bg-gray-50 px-4 py-2 rounded-lg">
+                                        <div class="text-sm text-gray-600">Age Range</div>
+                                        <div class="text-lg font-bold text-gray-900">13-16 years</div>
+                                    </div>
+                                    <div class="bg-gray-50 px-4 py-2 rounded-lg">
+                                        <div class="text-sm text-gray-600">Days Left</div>
+                                        <div class="text-lg font-bold text-orange-600">24 days</div>
+                                    </div>
+                                    <div class="bg-gray-50 px-4 py-2 rounded-lg">
+                                        <div class="text-sm text-gray-600">Applicants</div>
+                                        <div class="text-lg font-bold text-gray-900">89 applied</div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4">
+                                    <div class="text-sm text-gray-600 mb-2">Looking for:</div>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-medium">Any Role</span>
+                                        <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-medium">U16</span>
+                                        <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-medium">Development</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="md:w-48 flex-shrink-0">
+                                <button class="w-full px-6 py-4 bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-xl font-semibold hover:shadow-lg transition hover:scale-105 mb-3">
+                                    Apply Now
+                                </button>
+                                <button class="w-full px-6 py-3 border-2 border-green-600 text-green-600 rounded-xl font-semibold hover:bg-green-50 transition">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="mt-12 flex justify-center">
+                <nav class="flex items-center space-x-2">
+                    <button class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition">
+                        Previous
+                    </button>
+                    <button class="px-4 py-2 bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-lg font-semibold">1</button>
+                    <button class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition">2</button>
+                    <button class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition">3</button>
+                    <button class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition">
+                        Next
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-green-500 to-blue-600 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-xl">CT</span>
+                        </div>
+                        <span class="text-xl font-bold text-white">CricketTalent</span>
+                    </div>
+                    <p class="text-gray-400 max-w-md">The Home of UK's Next Cricket Generation. Connect players, scouts, coaches, and academies in one platform.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-green-400 transition-colors">Home</a></li>
+                        <li><a href="find-talent.html" class="hover:text-green-400 transition-colors">Find Talent</a></li>
+                        <li><a href="find-opportunities.html" class="hover:text-green-400 transition-colors">Find Opportunities</a></li>
+                        <li><a href="#" class="hover:text-green-400 transition-colors">Mentorship</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-green-400 transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-green-400 transition-colors">Contact</a></li>
+                        <li><a href="#" class="hover:text-green-400 transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-green-400 transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 CricketTalent. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

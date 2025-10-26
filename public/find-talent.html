@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Talent - CricketTalent</title>
+    <meta name="description" content="Discover cricket talent across the UK">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-green-50 via-blue-50 to-green-50 min-h-screen">
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-to-br from-green-500 to-blue-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">CT</span>
+                    </div>
+                    <span class="text-xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+                        CricketTalent
+                    </span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-green-600 transition-colors font-medium">Home</a>
+                    <a href="find-talent.html" class="text-green-600 hover:text-green-700 transition-colors font-medium border-b-2 border-green-600 pb-1">Find Talent</a>
+                    <a href="find-opportunities.html" class="text-gray-700 hover:text-green-600 transition-colors font-medium">Find Opportunities</a>
+                    <a href="#" class="text-gray-700 hover:text-green-600 transition-colors font-medium">Mentorship</a>
+                </div>
+
+                <!-- Auth Buttons -->
+                <div class="flex items-center space-x-4">
+                    <a href="login.html" class="hidden md:inline-block text-gray-700 hover:text-green-600 transition-colors font-medium">Login</a>
+                    <a href="signup.html" class="px-4 py-2 bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-full font-medium hover:shadow-lg transition-all hover:scale-105">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Search Section -->
+    <section class="pt-24 pb-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-8">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                    <span class="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+                        Discover Cricket Talent
+                    </span>
+                </h1>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Search and filter through a network of talented players across the UK
+                </p>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="max-w-4xl mx-auto mb-8">
+                <div class="bg-white rounded-2xl shadow-xl p-6">
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="Search by name, skill, or location..."
+                            class="flex-1 px-6 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-lg"
+                        />
+                        <button class="px-8 py-4 bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all hover:scale-105">
+                            <span class="hidden md:inline">Search</span>
+                            <svg class="w-6 h-6 md:hidden mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="pb-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                <!-- Left Sidebar - Filters -->
+                <div class="lg:col-span-1">
+                    <div class="bg-white rounded-2xl shadow-lg p-6 sticky top-24">
+                        <h2 class="text-2xl font-bold mb-6 text-gray-900">Filters</h2>
+                        
+                        <!-- Location Filter -->
+                        <div class="mb-6">
+                            <label class="block text-sm font-semibold text-gray-700 mb-3">Location (County)</label>
+                            <div class="space-y-2 max-h-40 overflow-y-auto">
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                    <span class="ml-2 text-gray-700">London</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                    <span class="ml-2 text-gray-700">Manchester</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                    <span class="ml-2 text-gray-700">Birmingham</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                    <span class="ml-2 text-gray-700">Leeds</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                    <span class="ml-2 text-gray-700">Liverpool</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Age Filter -->
+                        <div class="mb-6">
+                            <label class="block text-sm font-semibold text-gray-700 mb-3">Age Range</label>
+                            <div class="flex gap-4">
+                                <input type="number" placeholder="Min" min="14" max="35" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                                <input type="number" placeholder="Max" min="14" max="35" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                            </div>
+                        </div>
+
+                        <!-- Primary Role Filter -->
+                        <div class="mb-6">
+                            <label class="block text-sm font-semibold text-gray-700 mb-3">Primary Role</label>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                    <span class="ml-2 text-gray-700">Batsman</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                    <span class="ml-2 text-gray-700">Bowler</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                    <span class="ml-2 text-gray-700">All-Rounder</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                    <span class="ml-2 text-gray-700">Wicket-Keeper</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Skills Filter -->
+                        <div class="mb-6">
+                            <label class="block text-sm font-semibold text-gray-700 mb-3">Skills</label>
+                            <div class="space-y-2 max-h-48 overflow-y-auto">
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                    <span class="ml-2 text-gray-700">Power Hitter</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                    <span class="ml-2 text-gray-700">Yorker Expert</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                    <span class="ml-2 text-gray-700">Agile Fielder</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                    <span class="ml-2 text-gray-700">Spin Specialist</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                    <span class="ml-2 text-gray-700">Match Winner</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Clear Filters Button -->
+                        <button class="w-full px-4 py-3 bg-gray-100 text-gray-700 rounded-xl font-semibold hover:bg-gray-200 transition-colors">
+                            Clear All Filters
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Side - Results -->
+                <div class="lg:col-span-3">
+                    <!-- Results Header -->
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
+                        <div>
+                            <h2 class="text-2xl font-bold text-gray-900">Search Results</h2>
+                            <p class="text-gray-600 mt-1">Found <span class="font-semibold text-green-600">42</span> talented players</p>
+                        </div>
+                        <select class="mt-4 sm:mt-0 px-4 py-2 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white">
+                            <option>Sort by: Most Recent</option>
+                            <option>Sort by: Age (Low to High)</option>
+                            <option>Sort by: Age (High to Low)</option>
+                            <option>Sort by: Location</option>
+                        </select>
+                    </div>
+
+                    <!-- Player Cards Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Player Card 1 -->
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                            <div class="relative h-64 bg-gradient-to-br from-green-400 to-blue-500 overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                <div class="absolute bottom-4 left-4 right-4">
+                                    <h3 class="text-xl font-bold text-white mb-1">Alex Thompson</h3>
+                                    <p class="text-green-300 font-medium">All-Rounder</p>
+                                </div>
+                                <div class="absolute top-4 right-4">
+                                    <button class="p-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition">
+                                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex items-center text-gray-600">
+                                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        </svg>
+                                        <span class="text-sm">18 years</span>
+                                    </div>
+                                    <div class="flex items-center text-gray-600">
+                                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                        </svg>
+                                        <span class="text-sm">London</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="px-3 py-1 bg-gradient-to-r from-green-100 to-blue-100 text-green-800 text-xs font-medium rounded-full">Power Hitter</span>
+                                    <span class="px-3 py-1 bg-gradient-to-r from-green-100 to-blue-100 text-green-800 text-xs font-medium rounded-full">Yorker Expert</span>
+                                </div>
+                                <div class="flex gap-2">
+                                    <a href="#" class="flex-1 px-4 py-2 bg-gradient-to-r from-green-600 to-blue-600 text-white text-center rounded-lg font-semibold hover:shadow-lg transition">
+                                        View Profile
+                                    </a>
+                                    <button class="px-4 py-2 border-2 border-green-600 text-green-600 rounded-lg hover:bg-green-50 transition">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="mt-12 flex justify-center">
+                        <nav class="flex items-center space-x-2">
+                            <button class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition">
+                                Previous
+                            </button>
+                            <button class="px-4 py-2 bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-lg font-semibold">1</button>
+                            <button class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition">2</button>
+                            <button class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition">3</button>
+                            <button class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition">
+                                Next
+                            </button>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-green-500 to-blue-600 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-xl">CT</span>
+                        </div>
+                        <span class="text-xl font-bold text-white">CricketTalent</span>
+                    </div>
+                    <p class="text-gray-400 max-w-md">The Home of UK's Next Cricket Generation. Connect players, scouts, coaches, and academies in one platform.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-green-400 transition-colors">Home</a></li>
+                        <li><a href="find-talent.html" class="hover:text-green-400 transition-colors">Find Talent</a></li>
+                        <li><a href="find-opportunities.html" class="hover:text-green-400 transition-colors">Find Opportunities</a></li>
+                        <li><a href="#" class="hover:text-green-400 transition-colors">Mentorship</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-green-400 transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-green-400 transition-colors">Contact</a></li>
+                        <li><a href="#" class="hover:text-green-400 transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-green-400 transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 CricketTalent. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
