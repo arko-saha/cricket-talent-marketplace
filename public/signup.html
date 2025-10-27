@@ -114,23 +114,38 @@
 
         <!-- Sign up Form -->
         <form class="mt-8 space-y-6" action="#" method="POST">
-            <div class="space-y-4">
-                <!-- Full Name -->
-                <div>
-                    <label for="fullName" class="block text-sm font-medium text-gray-700 mb-2">
-                        Full Name
-                    </label>
-                    <input
-                        id="fullName"
-                        name="fullName"
-                        type="text"
-                        required
-                        class="appearance-none relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition"
-                        placeholder="Enter your full name"
-                    />
-                </div>
+                         <div class="space-y-4">
+                 <!-- First Name -->
+                 <div>
+                     <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">
+                         First Name
+                     </label>
+                     <input
+                         id="firstName"
+                         name="firstName"
+                         type="text"
+                         required
+                         class="appearance-none relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition"
+                         placeholder="Enter your first name"
+                     />
+                 </div>
 
-                <!-- Email -->
+                 <!-- Last Name -->
+                 <div>
+                     <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">
+                         Last Name
+                     </label>
+                     <input
+                         id="lastName"
+                         name="lastName"
+                         type="text"
+                         required
+                         class="appearance-none relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition"
+                         placeholder="Enter your last name"
+                     />
+                 </div>
+
+                 <!-- Email -->
                 <div>
                     <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
                         Email address
@@ -241,6 +256,9 @@
         </form>
     </div>
 
+    <!-- API Script -->
+    <script src="js/api.js"></script>
+
     <script>
         let selectedRole = '';
 
@@ -269,6 +287,46 @@
                 clubField.style.display = 'none';
             }
         }
+
+        // Handle form submission
+        document.querySelector('form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            if (!selectedRole) {
+                alert('Please select a role');
+                return;
+            }
+
+            const formData = {
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value,
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                role: selectedRole
+            };
+
+            try {
+                const response = await api.register(formData);
+                
+                // Store token and user data
+                api.setToken(response.access_token);
+                api.setUser(response.user);
+                
+                // Show success message
+                alert('Account created successfully!');
+                
+                // Redirect based on role
+                if (response.user.role === 'player') {
+                    window.location.href = 'find-talent.html';
+                } else if (response.user.role === 'scout') {
+                    window.location.href = 'find-opportunities.html';
+                } else {
+                    window.location.href = 'index.html';
+                }
+            } catch (error) {
+                alert(error.message || 'Registration failed. Please try again.');
+            }
+        });
     </script>
 </body>
 </html>

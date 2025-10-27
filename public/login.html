@@ -140,5 +140,40 @@
             </div>
         </form>
     </div>
+
+    <!-- API Script -->
+    <script src="js/api.js"></script>
+
+    <script>
+        // Handle form submission
+        document.querySelector('form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                const response = await api.login(email, password);
+                
+                // Store token and user data
+                api.setToken(response.access_token);
+                api.setUser(response.user);
+                
+                // Show success message
+                alert('Login successful!');
+                
+                // Redirect based on role
+                if (response.user.role === 'player') {
+                    window.location.href = 'find-talent.html';
+                } else if (response.user.role === 'scout') {
+                    window.location.href = 'find-opportunities.html';
+                } else {
+                    window.location.href = 'index.html';
+                }
+            } catch (error) {
+                alert(error.message || 'Login failed. Please check your credentials.');
+            }
+        });
+    </script>
 </body>
 </html>
