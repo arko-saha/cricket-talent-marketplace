@@ -46,7 +46,7 @@
                     <a href="index.html" class="text-gray-700 hover:text-green-600 transition-colors font-medium">Home</a>
                     <a href="find-talent.html" class="text-gray-700 hover:text-green-600 transition-colors font-medium">Find Talent</a>
                     <a href="find-opportunities.html" class="text-green-600 hover:text-green-700 transition-colors font-medium border-b-2 border-green-600 pb-1">Find Opportunities</a>
-                    <a href="#" class="text-gray-700 hover:text-green-600 transition-colors font-medium">Mentorship</a>
+                    <a href="career-hub.html" class="text-gray-700 hover:text-green-600 transition-colors font-medium">Career Hub</a>
                 </div>
 
                 <!-- Auth Buttons -->
@@ -79,19 +79,19 @@
         <div class="max-w-7xl mx-auto">
             <!-- Category Tabs -->
             <div class="flex flex-wrap justify-center gap-4 mb-8">
-                <button class="px-6 py-3 bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-full font-semibold hover:shadow-lg transition">
+                <button class="tab-button px-6 py-3 bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-full font-semibold hover:shadow-lg transition" data-category="all">
                     All Opportunities
                 </button>
-                <button class="px-6 py-3 bg-white text-gray-700 rounded-full font-semibold hover:bg-gray-50 transition">
+                <button class="tab-button px-6 py-3 bg-white text-gray-700 rounded-full font-semibold hover:bg-gray-50 transition" data-category="trial">
                     Trials
                 </button>
-                <button class="px-6 py-3 bg-white text-gray-700 rounded-full font-semibold hover:bg-gray-50 transition">
+                <button class="tab-button px-6 py-3 bg-white text-gray-700 rounded-full font-semibold hover:bg-gray-50 transition" data-category="club">
                     Club Openings
                 </button>
-                <button class="px-6 py-3 bg-white text-gray-700 rounded-full font-semibold hover:bg-gray-50 transition">
+                <button class="tab-button px-6 py-3 bg-white text-gray-700 rounded-full font-semibold hover:bg-gray-50 transition" data-category="academy">
                     Academies
                 </button>
-                <button class="px-6 py-3 bg-white text-gray-700 rounded-full font-semibold hover:bg-gray-50 transition">
+                <button class="tab-button px-6 py-3 bg-white text-gray-700 rounded-full font-semibold hover:bg-gray-50 transition" data-category="scholarship">
                     Scholarships
                 </button>
             </div>
@@ -99,7 +99,7 @@
             <!-- Results -->
             <div class="space-y-6">
                 <!-- Opportunity Card 1 -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
+                <div class="opportunity-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300" data-category="trial">
                     <div class="p-6 md:p-8">
                         <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                             <div class="flex-1">
@@ -169,7 +169,7 @@
                 </div>
 
                 <!-- Opportunity Card 2 -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
+                <div class="opportunity-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300" data-category="club">
                     <div class="p-6 md:p-8">
                         <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                             <div class="flex-1">
@@ -237,7 +237,7 @@
                 </div>
 
                 <!-- Opportunity Card 3 -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
+                <div class="opportunity-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300" data-category="academy">
                     <div class="p-6 md:p-8">
                         <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                             <div class="flex-1">
@@ -342,7 +342,7 @@
                         <li><a href="index.html" class="hover:text-green-400 transition-colors">Home</a></li>
                         <li><a href="find-talent.html" class="hover:text-green-400 transition-colors">Find Talent</a></li>
                         <li><a href="find-opportunities.html" class="hover:text-green-400 transition-colors">Find Opportunities</a></li>
-                        <li><a href="#" class="hover:text-green-400 transition-colors">Mentorship</a></li>
+                        <li><a href="career-hub.html" class="hover:text-green-400 transition-colors">Career Hub</a></li>
                     </ul>
                 </div>
 
@@ -362,5 +362,35 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Tab switching functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const opportunityCards = document.querySelectorAll('.opportunity-card');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    
+                    // Update button styles
+                    tabButtons.forEach(btn => {
+                        btn.className = 'tab-button px-6 py-3 bg-white text-gray-700 rounded-full font-semibold hover:bg-gray-50 transition';
+                    });
+                    this.className = 'tab-button px-6 py-3 bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-full font-semibold hover:shadow-lg transition';
+                    
+                    // Show/hide opportunity cards
+                    opportunityCards.forEach(card => {
+                        const cardCategory = card.getAttribute('data-category');
+                        if (category === 'all' || cardCategory === category) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
