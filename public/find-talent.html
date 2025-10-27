@@ -97,11 +97,31 @@
     <!-- Main Content -->
     <section class="pb-20 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
+            <!-- Filter Toggle Button (Mobile) -->
+            <div class="lg:hidden mb-6">
+                <button id="filterToggle" class="w-full px-6 py-4 bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all flex items-center justify-center space-x-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
+                    </svg>
+                    <span>Filters</span>
+                    <svg id="filterToggleIcon" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+            </div>
+
             <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
                 <!-- Left Sidebar - Filters -->
-                <div class="lg:col-span-1">
+                <div id="filterSidebar" class="lg:col-span-1 lg:block hidden">
                     <div class="bg-white rounded-2xl shadow-lg p-6 sticky top-24">
-                        <h2 class="text-2xl font-bold mb-6 text-gray-900">Filters</h2>
+                        <div class="flex items-center justify-between mb-6">
+                            <h2 class="text-2xl font-bold text-gray-900">Filters</h2>
+                            <button id="desktopFilterToggle" class="lg:hidden p-2 text-gray-500 hover:text-gray-700 transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
                         
                         <!-- Location Filter -->
                         <div class="mb-6">
@@ -749,6 +769,12 @@
             const sortSelect = document.getElementById('sortSelect');
             const playerGrid = document.getElementById('playerGrid');
             const resultsCount = document.getElementById('resultsCount');
+            
+            // Collapsible filter elements
+            const filterToggle = document.getElementById('filterToggle');
+            const desktopFilterToggle = document.getElementById('desktopFilterToggle');
+            const filterToggleIcon = document.getElementById('filterToggleIcon');
+            const filterSidebar = document.getElementById('filterSidebar');
 
             // Store all player cards
             const allPlayerCards = Array.from(document.querySelectorAll('.player-card'));
@@ -851,6 +877,25 @@
                 updateDisplay();
             }
 
+            // Collapsible filter functionality
+            function toggleFilters() {
+                filterSidebar.classList.toggle('hidden');
+                filterSidebar.classList.toggle('block');
+                
+                // Rotate the toggle icon
+                if (filterSidebar.classList.contains('hidden')) {
+                    filterToggleIcon.style.transform = 'rotate(0deg)';
+                } else {
+                    filterToggleIcon.style.transform = 'rotate(180deg)';
+                }
+            }
+
+            function closeFilters() {
+                filterSidebar.classList.add('hidden');
+                filterSidebar.classList.remove('block');
+                filterToggleIcon.style.transform = 'rotate(0deg)';
+            }
+
             // Event listeners
             searchInput.addEventListener('input', filterPlayers);
             locationFilters.forEach(filter => filter.addEventListener('change', filterPlayers));
@@ -860,6 +905,10 @@
             maxAgeInput.addEventListener('input', filterPlayers);
             sortSelect.addEventListener('change', sortPlayers);
             clearFiltersBtn.addEventListener('click', clearAllFilters);
+            
+            // Collapsible filter event listeners
+            filterToggle.addEventListener('click', toggleFilters);
+            desktopFilterToggle.addEventListener('click', closeFilters);
 
             // Initialize display
             updateDisplay();
