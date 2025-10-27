@@ -67,9 +67,29 @@
                         Find Your Next Opportunity
                     </span>
                 </h1>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
                     Discover trials, club openings, and scholarship opportunities across the UK
                 </p>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="max-w-4xl mx-auto mb-8">
+                <div class="bg-white rounded-2xl shadow-xl p-6">
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="Search by club, academy, location, or opportunity type..."
+                            class="flex-1 px-6 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-lg"
+                        />
+                        <button class="px-8 py-4 bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all hover:scale-105">
+                            <span class="hidden md:inline">Search</span>
+                            <svg class="w-6 h-6 md:hidden mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -364,11 +384,13 @@
     </footer>
 
     <script>
-        // Tab switching functionality
+        // Tab switching and search functionality
         document.addEventListener('DOMContentLoaded', function() {
             const tabButtons = document.querySelectorAll('.tab-button');
             const opportunityCards = document.querySelectorAll('.opportunity-card');
+            const searchInput = document.getElementById('searchInput');
 
+            // Tab switching functionality
             tabButtons.forEach(button => {
                 button.addEventListener('click', function() {
                     const category = this.getAttribute('data-category');
@@ -388,6 +410,20 @@
                             card.style.display = 'none';
                         }
                     });
+                });
+            });
+
+            // Search functionality
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                
+                opportunityCards.forEach(card => {
+                    const cardText = card.textContent.toLowerCase();
+                    if (cardText.includes(searchTerm)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
                 });
             });
         });

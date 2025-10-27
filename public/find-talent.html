@@ -110,10 +110,10 @@
                 </button>
             </div>
 
-            <div class="flex flex-col lg:flex-row gap-6 lg:gap-8">
+            <div class="flex gap-0 lg:gap-8 transition-all duration-300 ease-in-out">
                 <!-- Collapsible Filter Sidebar -->
-                <div id="filterSidebar" class="w-full lg:w-80 flex-shrink-0 transition-all duration-300 ease-in-out transform -translate-x-full lg:-translate-x-full opacity-0 lg:opacity-0">
-                    <div class="bg-white rounded-2xl shadow-lg p-4 lg:p-6 sticky top-24">
+                <div id="filterSidebar" class="w-0 lg:w-0 flex-shrink-0 transition-all duration-300 ease-in-out overflow-hidden">
+                    <div class="w-80 bg-white rounded-2xl shadow-lg p-4 lg:p-6 sticky top-24">
                         <div class="flex items-center justify-between mb-4 lg:mb-6">
                             <h2 class="text-xl lg:text-2xl font-bold text-gray-900">Filters</h2>
                         </div>
@@ -882,15 +882,15 @@
                 filtersVisible = !filtersVisible;
                 
                 if (filtersVisible) {
-                    // Show filters
-                    filterSidebar.classList.remove('-translate-x-full', 'opacity-0', 'lg:-translate-x-full', 'lg:opacity-0');
-                    filterSidebar.classList.add('translate-x-0', 'opacity-100', 'lg:translate-x-0', 'lg:opacity-100');
+                    // Show filters - expand width
+                    filterSidebar.classList.remove('w-0', 'lg:w-0');
+                    filterSidebar.classList.add('w-80', 'lg:w-80');
                     filterToggleText.textContent = 'Hide Filters';
                     filterToggleIcon.style.transform = 'rotate(180deg)';
                 } else {
-                    // Hide filters
-                    filterSidebar.classList.remove('translate-x-0', 'opacity-100', 'lg:translate-x-0', 'lg:opacity-100');
-                    filterSidebar.classList.add('-translate-x-full', 'opacity-0', 'lg:-translate-x-full', 'lg:opacity-0');
+                    // Hide filters - collapse width
+                    filterSidebar.classList.remove('w-80', 'lg:w-80');
+                    filterSidebar.classList.add('w-0', 'lg:w-0');
                     filterToggleText.textContent = 'Show Filters';
                     filterToggleIcon.style.transform = 'rotate(0deg)';
                 }
