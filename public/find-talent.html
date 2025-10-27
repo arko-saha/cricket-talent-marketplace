@@ -46,7 +46,7 @@
                     <a href="index.html" class="text-gray-700 hover:text-green-600 transition-colors font-medium">Home</a>
                     <a href="find-talent.html" class="text-green-600 hover:text-green-700 transition-colors font-medium border-b-2 border-green-600 pb-1">Find Talent</a>
                     <a href="find-opportunities.html" class="text-gray-700 hover:text-green-600 transition-colors font-medium">Find Opportunities</a>
-                    <a href="#" class="text-gray-700 hover:text-green-600 transition-colors font-medium">Mentorship</a>
+                    <a href="career-hub.html" class="text-gray-700 hover:text-green-600 transition-colors font-medium">Career Hub</a>
                 </div>
 
                 <!-- Auth Buttons -->
@@ -108,24 +108,32 @@
                             <label class="block text-sm font-semibold text-gray-700 mb-3">Location (County)</label>
                             <div class="space-y-2 max-h-40 overflow-y-auto">
                                 <label class="flex items-center">
-                                    <input type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                    <input type="checkbox" class="location-filter h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded" data-location="London">
                                     <span class="ml-2 text-gray-700">London</span>
                                 </label>
                                 <label class="flex items-center">
-                                    <input type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                    <input type="checkbox" class="location-filter h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded" data-location="Manchester">
                                     <span class="ml-2 text-gray-700">Manchester</span>
                                 </label>
                                 <label class="flex items-center">
-                                    <input type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                    <input type="checkbox" class="location-filter h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded" data-location="Birmingham">
                                     <span class="ml-2 text-gray-700">Birmingham</span>
                                 </label>
                                 <label class="flex items-center">
-                                    <input type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                    <input type="checkbox" class="location-filter h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded" data-location="Leeds">
                                     <span class="ml-2 text-gray-700">Leeds</span>
                                 </label>
                                 <label class="flex items-center">
-                                    <input type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                    <input type="checkbox" class="location-filter h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded" data-location="Liverpool">
                                     <span class="ml-2 text-gray-700">Liverpool</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="location-filter h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded" data-location="Bristol">
+                                    <span class="ml-2 text-gray-700">Bristol</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="location-filter h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded" data-location="Nottingham">
+                                    <span class="ml-2 text-gray-700">Nottingham</span>
                                 </label>
                             </div>
                         </div>
@@ -134,8 +142,8 @@
                         <div class="mb-6">
                             <label class="block text-sm font-semibold text-gray-700 mb-3">Age Range</label>
                             <div class="flex gap-4">
-                                <input type="number" placeholder="Min" min="14" max="35" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
-                                <input type="number" placeholder="Max" min="14" max="35" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                                <input type="number" id="minAge" placeholder="Min" min="14" max="35" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                                <input type="number" id="maxAge" placeholder="Max" min="14" max="35" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
                             </div>
                         </div>
 
@@ -144,19 +152,19 @@
                             <label class="block text-sm font-semibold text-gray-700 mb-3">Primary Role</label>
                             <div class="space-y-2">
                                 <label class="flex items-center">
-                                    <input type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                    <input type="checkbox" class="role-filter h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded" data-role="Batsman">
                                     <span class="ml-2 text-gray-700">Batsman</span>
                                 </label>
                                 <label class="flex items-center">
-                                    <input type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                    <input type="checkbox" class="role-filter h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded" data-role="Bowler">
                                     <span class="ml-2 text-gray-700">Bowler</span>
                                 </label>
                                 <label class="flex items-center">
-                                    <input type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                    <input type="checkbox" class="role-filter h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded" data-role="All-Rounder">
                                     <span class="ml-2 text-gray-700">All-Rounder</span>
                                 </label>
                                 <label class="flex items-center">
-                                    <input type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                    <input type="checkbox" class="role-filter h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded" data-role="Wicket-Keeper">
                                     <span class="ml-2 text-gray-700">Wicket-Keeper</span>
                                 </label>
                             </div>
@@ -167,30 +175,42 @@
                             <label class="block text-sm font-semibold text-gray-700 mb-3">Skills</label>
                             <div class="space-y-2 max-h-48 overflow-y-auto">
                                 <label class="flex items-center">
-                                    <input type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                    <input type="checkbox" class="skill-filter h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded" data-skill="Power Hitter">
                                     <span class="ml-2 text-gray-700">Power Hitter</span>
                                 </label>
                                 <label class="flex items-center">
-                                    <input type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                    <input type="checkbox" class="skill-filter h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded" data-skill="Yorker Expert">
                                     <span class="ml-2 text-gray-700">Yorker Expert</span>
                                 </label>
                                 <label class="flex items-center">
-                                    <input type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                    <input type="checkbox" class="skill-filter h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded" data-skill="Agile Fielder">
                                     <span class="ml-2 text-gray-700">Agile Fielder</span>
                                 </label>
                                 <label class="flex items-center">
-                                    <input type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                    <input type="checkbox" class="skill-filter h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded" data-skill="Spin Specialist">
                                     <span class="ml-2 text-gray-700">Spin Specialist</span>
                                 </label>
                                 <label class="flex items-center">
-                                    <input type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                    <input type="checkbox" class="skill-filter h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded" data-skill="Match Winner">
                                     <span class="ml-2 text-gray-700">Match Winner</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="skill-filter h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded" data-skill="Fast Bowler">
+                                    <span class="ml-2 text-gray-700">Fast Bowler</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="skill-filter h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded" data-skill="Swing Bowler">
+                                    <span class="ml-2 text-gray-700">Swing Bowler</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="skill-filter h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded" data-skill="Finisher">
+                                    <span class="ml-2 text-gray-700">Finisher</span>
                                 </label>
                             </div>
                         </div>
 
                         <!-- Clear Filters Button -->
-                        <button class="w-full px-4 py-3 bg-gray-100 text-gray-700 rounded-xl font-semibold hover:bg-gray-200 transition-colors">
+                        <button id="clearFilters" class="w-full px-4 py-3 bg-gray-100 text-gray-700 rounded-xl font-semibold hover:bg-gray-200 transition-colors">
                             Clear All Filters
                         </button>
                     </div>
@@ -202,20 +222,21 @@
                     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
                         <div>
                             <h2 class="text-2xl font-bold text-gray-900">Search Results</h2>
-                            <p class="text-gray-600 mt-1">Found <span class="font-semibold text-green-600">42</span> talented players</p>
+                            <p class="text-gray-600 mt-1">Found <span id="resultsCount" class="font-semibold text-green-600">42</span> talented players</p>
                         </div>
-                        <select class="mt-4 sm:mt-0 px-4 py-2 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white">
-                            <option>Sort by: Most Recent</option>
-                            <option>Sort by: Age (Low to High)</option>
-                            <option>Sort by: Age (High to Low)</option>
-                            <option>Sort by: Location</option>
+                        <select id="sortSelect" class="mt-4 sm:mt-0 px-4 py-2 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white">
+                            <option value="recent">Sort by: Most Recent</option>
+                            <option value="age-low">Sort by: Age (Low to High)</option>
+                            <option value="age-high">Sort by: Age (High to Low)</option>
+                            <option value="location">Sort by: Location</option>
                         </select>
                     </div>
 
                     <!-- Player Cards Grid -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div id="playerGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         <!-- Player Card 1 -->
-                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                        <div class="player-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2" 
+                             data-name="Alex Thompson" data-age="18" data-location="London" data-role="All-Rounder" data-skills="Power Hitter,Yorker Expert">
                             <div class="relative h-64 bg-gradient-to-br from-green-400 to-blue-500 overflow-hidden">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                                 <div class="absolute bottom-4 left-4 right-4">
@@ -248,6 +269,398 @@
                                 <div class="flex flex-wrap gap-2 mb-4">
                                     <span class="px-3 py-1 bg-gradient-to-r from-green-100 to-blue-100 text-green-800 text-xs font-medium rounded-full">Power Hitter</span>
                                     <span class="px-3 py-1 bg-gradient-to-r from-green-100 to-blue-100 text-green-800 text-xs font-medium rounded-full">Yorker Expert</span>
+                                </div>
+                                <div class="flex gap-2">
+                                    <a href="#" class="flex-1 px-4 py-2 bg-gradient-to-r from-green-600 to-blue-600 text-white text-center rounded-lg font-semibold hover:shadow-lg transition">
+                                        View Profile
+                                    </a>
+                                    <button class="px-4 py-2 border-2 border-green-600 text-green-600 rounded-lg hover:bg-green-50 transition">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Player Card 2 -->
+                        <div class="player-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2" 
+                             data-name="Sarah Johnson" data-age="19" data-location="Manchester" data-role="Batsman" data-skills="Agile Fielder,Match Winner">
+                            <div class="relative h-64 bg-gradient-to-br from-blue-400 to-purple-500 overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                <div class="absolute bottom-4 left-4 right-4">
+                                    <h3 class="text-xl font-bold text-white mb-1">Sarah Johnson</h3>
+                                    <p class="text-blue-300 font-medium">Batsman</p>
+                                </div>
+                                <div class="absolute top-4 right-4">
+                                    <button class="p-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition">
+                                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex items-center text-gray-600">
+                                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        </svg>
+                                        <span class="text-sm">19 years</span>
+                                    </div>
+                                    <div class="flex items-center text-gray-600">
+                                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                        </svg>
+                                        <span class="text-sm">Manchester</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 text-xs font-medium rounded-full">Agile Fielder</span>
+                                    <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 text-xs font-medium rounded-full">Match Winner</span>
+                                </div>
+                                <div class="flex gap-2">
+                                    <a href="#" class="flex-1 px-4 py-2 bg-gradient-to-r from-green-600 to-blue-600 text-white text-center rounded-lg font-semibold hover:shadow-lg transition">
+                                        View Profile
+                                    </a>
+                                    <button class="px-4 py-2 border-2 border-green-600 text-green-600 rounded-lg hover:bg-green-50 transition">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Player Card 3 -->
+                        <div class="player-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2" 
+                             data-name="James Wilson" data-age="17" data-location="Birmingham" data-role="Bowler" data-skills="Spin Specialist,Swing Bowler">
+                            <div class="relative h-64 bg-gradient-to-br from-purple-400 to-pink-500 overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                <div class="absolute bottom-4 left-4 right-4">
+                                    <h3 class="text-xl font-bold text-white mb-1">James Wilson</h3>
+                                    <p class="text-purple-300 font-medium">Bowler</p>
+                                </div>
+                                <div class="absolute top-4 right-4">
+                                    <button class="p-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition">
+                                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex items-center text-gray-600">
+                                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        </svg>
+                                        <span class="text-sm">17 years</span>
+                                    </div>
+                                    <div class="flex items-center text-gray-600">
+                                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                        </svg>
+                                        <span class="text-sm">Birmingham</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="px-3 py-1 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-800 text-xs font-medium rounded-full">Spin Specialist</span>
+                                    <span class="px-3 py-1 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-800 text-xs font-medium rounded-full">Swing Bowler</span>
+                                </div>
+                                <div class="flex gap-2">
+                                    <a href="#" class="flex-1 px-4 py-2 bg-gradient-to-r from-green-600 to-blue-600 text-white text-center rounded-lg font-semibold hover:shadow-lg transition">
+                                        View Profile
+                                    </a>
+                                    <button class="px-4 py-2 border-2 border-green-600 text-green-600 rounded-lg hover:bg-green-50 transition">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Player Card 4 -->
+                        <div class="player-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2" 
+                             data-name="Emma Davis" data-age="20" data-location="Leeds" data-role="Wicket-Keeper" data-skills="Agile Fielder,Match Winner">
+                            <div class="relative h-64 bg-gradient-to-br from-orange-400 to-red-500 overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                <div class="absolute bottom-4 left-4 right-4">
+                                    <h3 class="text-xl font-bold text-white mb-1">Emma Davis</h3>
+                                    <p class="text-orange-300 font-medium">Wicket-Keeper</p>
+                                </div>
+                                <div class="absolute top-4 right-4">
+                                    <button class="p-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition">
+                                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex items-center text-gray-600">
+                                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        </svg>
+                                        <span class="text-sm">20 years</span>
+                                    </div>
+                                    <div class="flex items-center text-gray-600">
+                                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                        </svg>
+                                        <span class="text-sm">Leeds</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="px-3 py-1 bg-gradient-to-r from-orange-100 to-red-100 text-orange-800 text-xs font-medium rounded-full">Agile Fielder</span>
+                                    <span class="px-3 py-1 bg-gradient-to-r from-orange-100 to-red-100 text-orange-800 text-xs font-medium rounded-full">Match Winner</span>
+                                </div>
+                                <div class="flex gap-2">
+                                    <a href="#" class="flex-1 px-4 py-2 bg-gradient-to-r from-green-600 to-blue-600 text-white text-center rounded-lg font-semibold hover:shadow-lg transition">
+                                        View Profile
+                                    </a>
+                                    <button class="px-4 py-2 border-2 border-green-600 text-green-600 rounded-lg hover:bg-green-50 transition">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Player Card 5 -->
+                        <div class="player-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2" 
+                             data-name="Michael Brown" data-age="22" data-location="Liverpool" data-role="Batsman" data-skills="Power Hitter,Finisher">
+                            <div class="relative h-64 bg-gradient-to-br from-teal-400 to-cyan-500 overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                <div class="absolute bottom-4 left-4 right-4">
+                                    <h3 class="text-xl font-bold text-white mb-1">Michael Brown</h3>
+                                    <p class="text-teal-300 font-medium">Batsman</p>
+                                </div>
+                                <div class="absolute top-4 right-4">
+                                    <button class="p-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition">
+                                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex items-center text-gray-600">
+                                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        </svg>
+                                        <span class="text-sm">22 years</span>
+                                    </div>
+                                    <div class="flex items-center text-gray-600">
+                                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                        </svg>
+                                        <span class="text-sm">Liverpool</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="px-3 py-1 bg-gradient-to-r from-teal-100 to-cyan-100 text-teal-800 text-xs font-medium rounded-full">Power Hitter</span>
+                                    <span class="px-3 py-1 bg-gradient-to-r from-teal-100 to-cyan-100 text-teal-800 text-xs font-medium rounded-full">Finisher</span>
+                                </div>
+                                <div class="flex gap-2">
+                                    <a href="#" class="flex-1 px-4 py-2 bg-gradient-to-r from-green-600 to-blue-600 text-white text-center rounded-lg font-semibold hover:shadow-lg transition">
+                                        View Profile
+                                    </a>
+                                    <button class="px-4 py-2 border-2 border-green-600 text-green-600 rounded-lg hover:bg-green-50 transition">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Player Card 6 -->
+                        <div class="player-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2" 
+                             data-name="Sophie Taylor" data-age="16" data-location="Bristol" data-role="Bowler" data-skills="Fast Bowler,Yorker Expert">
+                            <div class="relative h-64 bg-gradient-to-br from-indigo-400 to-purple-500 overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                <div class="absolute bottom-4 left-4 right-4">
+                                    <h3 class="text-xl font-bold text-white mb-1">Sophie Taylor</h3>
+                                    <p class="text-indigo-300 font-medium">Bowler</p>
+                                </div>
+                                <div class="absolute top-4 right-4">
+                                    <button class="p-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition">
+                                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex items-center text-gray-600">
+                                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        </svg>
+                                        <span class="text-sm">16 years</span>
+                                    </div>
+                                    <div class="flex items-center text-gray-600">
+                                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                        </svg>
+                                        <span class="text-sm">Bristol</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="px-3 py-1 bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-800 text-xs font-medium rounded-full">Fast Bowler</span>
+                                    <span class="px-3 py-1 bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-800 text-xs font-medium rounded-full">Yorker Expert</span>
+                                </div>
+                                <div class="flex gap-2">
+                                    <a href="#" class="flex-1 px-4 py-2 bg-gradient-to-r from-green-600 to-blue-600 text-white text-center rounded-lg font-semibold hover:shadow-lg transition">
+                                        View Profile
+                                    </a>
+                                    <button class="px-4 py-2 border-2 border-green-600 text-green-600 rounded-lg hover:bg-green-50 transition">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Player Card 7 -->
+                        <div class="player-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2" 
+                             data-name="Oliver Smith" data-age="21" data-location="Nottingham" data-role="All-Rounder" data-skills="Swing Bowler,Match Winner">
+                            <div class="relative h-64 bg-gradient-to-br from-emerald-400 to-teal-500 overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                <div class="absolute bottom-4 left-4 right-4">
+                                    <h3 class="text-xl font-bold text-white mb-1">Oliver Smith</h3>
+                                    <p class="text-emerald-300 font-medium">All-Rounder</p>
+                                </div>
+                                <div class="absolute top-4 right-4">
+                                    <button class="p-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition">
+                                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex items-center text-gray-600">
+                                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        </svg>
+                                        <span class="text-sm">21 years</span>
+                                    </div>
+                                    <div class="flex items-center text-gray-600">
+                                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                        </svg>
+                                        <span class="text-sm">Nottingham</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="px-3 py-1 bg-gradient-to-r from-emerald-100 to-teal-100 text-emerald-800 text-xs font-medium rounded-full">Swing Bowler</span>
+                                    <span class="px-3 py-1 bg-gradient-to-r from-emerald-100 to-teal-100 text-emerald-800 text-xs font-medium rounded-full">Match Winner</span>
+                                </div>
+                                <div class="flex gap-2">
+                                    <a href="#" class="flex-1 px-4 py-2 bg-gradient-to-r from-green-600 to-blue-600 text-white text-center rounded-lg font-semibold hover:shadow-lg transition">
+                                        View Profile
+                                    </a>
+                                    <button class="px-4 py-2 border-2 border-green-600 text-green-600 rounded-lg hover:bg-green-50 transition">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Player Card 8 -->
+                        <div class="player-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2" 
+                             data-name="Isabella Clark" data-age="18" data-location="London" data-role="Batsman" data-skills="Power Hitter,Finisher">
+                            <div class="relative h-64 bg-gradient-to-br from-rose-400 to-pink-500 overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                <div class="absolute bottom-4 left-4 right-4">
+                                    <h3 class="text-xl font-bold text-white mb-1">Isabella Clark</h3>
+                                    <p class="text-rose-300 font-medium">Batsman</p>
+                                </div>
+                                <div class="absolute top-4 right-4">
+                                    <button class="p-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition">
+                                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex items-center text-gray-600">
+                                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        </svg>
+                                        <span class="text-sm">18 years</span>
+                                    </div>
+                                    <div class="flex items-center text-gray-600">
+                                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                        </svg>
+                                        <span class="text-sm">London</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="px-3 py-1 bg-gradient-to-r from-rose-100 to-pink-100 text-rose-800 text-xs font-medium rounded-full">Power Hitter</span>
+                                    <span class="px-3 py-1 bg-gradient-to-r from-rose-100 to-pink-100 text-rose-800 text-xs font-medium rounded-full">Finisher</span>
+                                </div>
+                                <div class="flex gap-2">
+                                    <a href="#" class="flex-1 px-4 py-2 bg-gradient-to-r from-green-600 to-blue-600 text-white text-center rounded-lg font-semibold hover:shadow-lg transition">
+                                        View Profile
+                                    </a>
+                                    <button class="px-4 py-2 border-2 border-green-600 text-green-600 rounded-lg hover:bg-green-50 transition">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Player Card 9 -->
+                        <div class="player-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2" 
+                             data-name="Daniel White" data-age="19" data-location="Manchester" data-role="Wicket-Keeper" data-skills="Agile Fielder,Match Winner">
+                            <div class="relative h-64 bg-gradient-to-br from-amber-400 to-orange-500 overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                <div class="absolute bottom-4 left-4 right-4">
+                                    <h3 class="text-xl font-bold text-white mb-1">Daniel White</h3>
+                                    <p class="text-amber-300 font-medium">Wicket-Keeper</p>
+                                </div>
+                                <div class="absolute top-4 right-4">
+                                    <button class="p-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition">
+                                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex items-center text-gray-600">
+                                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        </svg>
+                                        <span class="text-sm">19 years</span>
+                                    </div>
+                                    <div class="flex items-center text-gray-600">
+                                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                        </svg>
+                                        <span class="text-sm">Manchester</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="px-3 py-1 bg-gradient-to-r from-amber-100 to-orange-100 text-amber-800 text-xs font-medium rounded-full">Agile Fielder</span>
+                                    <span class="px-3 py-1 bg-gradient-to-r from-amber-100 to-orange-100 text-amber-800 text-xs font-medium rounded-full">Match Winner</span>
                                 </div>
                                 <div class="flex gap-2">
                                     <a href="#" class="flex-1 px-4 py-2 bg-gradient-to-r from-green-600 to-blue-600 text-white text-center rounded-lg font-semibold hover:shadow-lg transition">
@@ -302,7 +715,7 @@
                         <li><a href="index.html" class="hover:text-green-400 transition-colors">Home</a></li>
                         <li><a href="find-talent.html" class="hover:text-green-400 transition-colors">Find Talent</a></li>
                         <li><a href="find-opportunities.html" class="hover:text-green-400 transition-colors">Find Opportunities</a></li>
-                        <li><a href="#" class="hover:text-green-400 transition-colors">Mentorship</a></li>
+                        <li><a href="career-hub.html" class="hover:text-green-400 transition-colors">Career Hub</a></li>
                     </ul>
                 </div>
 
@@ -322,5 +735,135 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Player data and filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('searchInput');
+            const locationFilters = document.querySelectorAll('.location-filter');
+            const roleFilters = document.querySelectorAll('.role-filter');
+            const skillFilters = document.querySelectorAll('.skill-filter');
+            const minAgeInput = document.getElementById('minAge');
+            const maxAgeInput = document.getElementById('maxAge');
+            const clearFiltersBtn = document.getElementById('clearFilters');
+            const sortSelect = document.getElementById('sortSelect');
+            const playerGrid = document.getElementById('playerGrid');
+            const resultsCount = document.getElementById('resultsCount');
+
+            // Store all player cards
+            const allPlayerCards = Array.from(document.querySelectorAll('.player-card'));
+            let filteredCards = [...allPlayerCards];
+
+            // Filter function
+            function filterPlayers() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const selectedLocations = Array.from(locationFilters)
+                    .filter(filter => filter.checked)
+                    .map(filter => filter.dataset.location);
+                const selectedRoles = Array.from(roleFilters)
+                    .filter(filter => filter.checked)
+                    .map(filter => filter.dataset.role);
+                const selectedSkills = Array.from(skillFilters)
+                    .filter(filter => filter.checked)
+                    .map(filter => filter.dataset.skill);
+                const minAge = parseInt(minAgeInput.value) || 0;
+                const maxAge = parseInt(maxAgeInput.value) || 100;
+
+                filteredCards = allPlayerCards.filter(card => {
+                    const name = card.dataset.name.toLowerCase();
+                    const location = card.dataset.location;
+                    const role = card.dataset.role;
+                    const skills = card.dataset.skills.split(',');
+                    const age = parseInt(card.dataset.age);
+
+                    // Search filter
+                    const matchesSearch = searchTerm === '' || 
+                        name.includes(searchTerm) || 
+                        location.toLowerCase().includes(searchTerm) ||
+                        role.toLowerCase().includes(searchTerm) ||
+                        skills.some(skill => skill.toLowerCase().includes(searchTerm));
+
+                    // Location filter
+                    const matchesLocation = selectedLocations.length === 0 || selectedLocations.includes(location);
+
+                    // Role filter
+                    const matchesRole = selectedRoles.length === 0 || selectedRoles.includes(role);
+
+                    // Skills filter
+                    const matchesSkills = selectedSkills.length === 0 || 
+                        selectedSkills.some(skill => skills.includes(skill));
+
+                    // Age filter
+                    const matchesAge = age >= minAge && age <= maxAge;
+
+                    return matchesSearch && matchesLocation && matchesRole && matchesSkills && matchesAge;
+                });
+
+                updateDisplay();
+            }
+
+            // Sort function
+            function sortPlayers() {
+                const sortValue = sortSelect.value;
+                
+                filteredCards.sort((a, b) => {
+                    switch(sortValue) {
+                        case 'age-low':
+                            return parseInt(a.dataset.age) - parseInt(b.dataset.age);
+                        case 'age-high':
+                            return parseInt(b.dataset.age) - parseInt(a.dataset.age);
+                        case 'location':
+                            return a.dataset.location.localeCompare(b.dataset.location);
+                        case 'recent':
+                        default:
+                            return 0; // Keep original order
+                    }
+                });
+
+                updateDisplay();
+            }
+
+            // Update display
+            function updateDisplay() {
+                // Clear current display
+                playerGrid.innerHTML = '';
+
+                // Add filtered cards
+                filteredCards.forEach(card => {
+                    playerGrid.appendChild(card);
+                });
+
+                // Update results count
+                resultsCount.textContent = filteredCards.length;
+            }
+
+            // Clear all filters
+            function clearAllFilters() {
+                searchInput.value = '';
+                locationFilters.forEach(filter => filter.checked = false);
+                roleFilters.forEach(filter => filter.checked = false);
+                skillFilters.forEach(filter => filter.checked = false);
+                minAgeInput.value = '';
+                maxAgeInput.value = '';
+                sortSelect.value = 'recent';
+                
+                filteredCards = [...allPlayerCards];
+                updateDisplay();
+            }
+
+            // Event listeners
+            searchInput.addEventListener('input', filterPlayers);
+            locationFilters.forEach(filter => filter.addEventListener('change', filterPlayers));
+            roleFilters.forEach(filter => filter.addEventListener('change', filterPlayers));
+            skillFilters.forEach(filter => filter.addEventListener('change', filterPlayers));
+            minAgeInput.addEventListener('input', filterPlayers);
+            maxAgeInput.addEventListener('input', filterPlayers);
+            sortSelect.addEventListener('change', sortPlayers);
+            clearFiltersBtn.addEventListener('click', clearAllFilters);
+
+            // Initialize display
+            updateDisplay();
+        });
+    </script>
 </body>
 </html>
