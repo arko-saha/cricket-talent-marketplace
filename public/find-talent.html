@@ -97,30 +97,25 @@
     <!-- Main Content -->
     <section class="pb-20 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
-            <!-- Filter Toggle Button (Mobile) -->
-            <div class="lg:hidden mb-6">
+            <!-- Filter Toggle Button -->
+            <div class="mb-6">
                 <button id="filterToggle" class="w-full px-6 py-4 bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all flex items-center justify-center space-x-2">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
                     </svg>
-                    <span>Filters</span>
+                    <span id="filterToggleText">Show Filters</span>
                     <svg id="filterToggleIcon" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                     </svg>
                 </button>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
-                <!-- Left Sidebar - Filters -->
-                <div id="filterSidebar" class="lg:col-span-1 lg:block hidden">
+            <div class="flex gap-8">
+                <!-- Collapsible Filter Sidebar -->
+                <div id="filterSidebar" class="w-80 flex-shrink-0 transition-all duration-300 ease-in-out transform -translate-x-full opacity-0">
                     <div class="bg-white rounded-2xl shadow-lg p-6 sticky top-24">
                         <div class="flex items-center justify-between mb-6">
                             <h2 class="text-2xl font-bold text-gray-900">Filters</h2>
-                            <button id="desktopFilterToggle" class="lg:hidden p-2 text-gray-500 hover:text-gray-700 transition-colors">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                            </button>
                         </div>
                         
                         <!-- Location Filter -->
@@ -236,13 +231,13 @@
                     </div>
                 </div>
 
-                <!-- Right Side - Results -->
-                <div class="lg:col-span-3">
+                <!-- Main Content Area -->
+                <div id="mainContent" class="flex-1 transition-all duration-300 ease-in-out">
                     <!-- Results Header -->
                     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
                         <div>
                             <h2 class="text-2xl font-bold text-gray-900">Search Results</h2>
-                            <p class="text-gray-600 mt-1">Found <span id="resultsCount" class="font-semibold text-green-600">42</span> talented players</p>
+                            <p class="text-gray-600 mt-1">Found <span id="resultsCount" class="font-semibold text-green-600">9</span> talented players</p>
                         </div>
                         <select id="sortSelect" class="mt-4 sm:mt-0 px-4 py-2 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white">
                             <option value="recent">Sort by: Most Recent</option>
@@ -772,9 +767,10 @@
             
             // Collapsible filter elements
             const filterToggle = document.getElementById('filterToggle');
-            const desktopFilterToggle = document.getElementById('desktopFilterToggle');
             const filterToggleIcon = document.getElementById('filterToggleIcon');
+            const filterToggleText = document.getElementById('filterToggleText');
             const filterSidebar = document.getElementById('filterSidebar');
+            const mainContent = document.getElementById('mainContent');
 
             // Store all player cards
             const allPlayerCards = Array.from(document.querySelectorAll('.player-card'));
@@ -878,22 +874,24 @@
             }
 
             // Collapsible filter functionality
-            function toggleFilters() {
-                filterSidebar.classList.toggle('hidden');
-                filterSidebar.classList.toggle('block');
-                
-                // Rotate the toggle icon
-                if (filterSidebar.classList.contains('hidden')) {
-                    filterToggleIcon.style.transform = 'rotate(0deg)';
-                } else {
-                    filterToggleIcon.style.transform = 'rotate(180deg)';
-                }
-            }
+            let filtersVisible = false;
 
-            function closeFilters() {
-                filterSidebar.classList.add('hidden');
-                filterSidebar.classList.remove('block');
-                filterToggleIcon.style.transform = 'rotate(0deg)';
+            function toggleFilters() {
+                filtersVisible = !filtersVisible;
+                
+                if (filtersVisible) {
+                    // Show filters
+                    filterSidebar.classList.remove('-translate-x-full', 'opacity-0');
+                    filterSidebar.classList.add('translate-x-0', 'opacity-100');
+                    filterToggleText.textContent = 'Hide Filters';
+                    filterToggleIcon.style.transform = 'rotate(180deg)';
+                } else {
+                    // Hide filters
+                    filterSidebar.classList.remove('translate-x-0', 'opacity-100');
+                    filterSidebar.classList.add('-translate-x-full', 'opacity-0');
+                    filterToggleText.textContent = 'Show Filters';
+                    filterToggleIcon.style.transform = 'rotate(0deg)';
+                }
             }
 
             // Event listeners
@@ -906,9 +904,8 @@
             sortSelect.addEventListener('change', sortPlayers);
             clearFiltersBtn.addEventListener('click', clearAllFilters);
             
-            // Collapsible filter event listeners
+            // Collapsible filter event listener
             filterToggle.addEventListener('click', toggleFilters);
-            desktopFilterToggle.addEventListener('click', closeFilters);
 
             // Initialize display
             updateDisplay();
