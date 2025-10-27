@@ -110,18 +110,18 @@
                 </button>
             </div>
 
-            <div class="flex gap-8">
+            <div class="flex flex-col lg:flex-row gap-6 lg:gap-8">
                 <!-- Collapsible Filter Sidebar -->
-                <div id="filterSidebar" class="w-80 flex-shrink-0 transition-all duration-300 ease-in-out transform -translate-x-full opacity-0">
-                    <div class="bg-white rounded-2xl shadow-lg p-6 sticky top-24">
-                        <div class="flex items-center justify-between mb-6">
-                            <h2 class="text-2xl font-bold text-gray-900">Filters</h2>
+                <div id="filterSidebar" class="w-full lg:w-80 flex-shrink-0 transition-all duration-300 ease-in-out transform -translate-x-full lg:-translate-x-full opacity-0 lg:opacity-0">
+                    <div class="bg-white rounded-2xl shadow-lg p-4 lg:p-6 sticky top-24">
+                        <div class="flex items-center justify-between mb-4 lg:mb-6">
+                            <h2 class="text-xl lg:text-2xl font-bold text-gray-900">Filters</h2>
                         </div>
                         
                         <!-- Location Filter -->
-                        <div class="mb-6">
-                            <label class="block text-sm font-semibold text-gray-700 mb-3">Location (County)</label>
-                            <div class="space-y-2 max-h-40 overflow-y-auto">
+                        <div class="mb-4 lg:mb-6">
+                            <label class="block text-sm font-semibold text-gray-700 mb-2 lg:mb-3">Location (County)</label>
+                            <div class="space-y-2 max-h-32 lg:max-h-40 overflow-y-auto">
                                 <label class="flex items-center">
                                     <input type="checkbox" class="location-filter h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded" data-location="London">
                                     <span class="ml-2 text-gray-700">London</span>
@@ -154,17 +154,17 @@
                         </div>
 
                         <!-- Age Filter -->
-                        <div class="mb-6">
-                            <label class="block text-sm font-semibold text-gray-700 mb-3">Age Range</label>
-                            <div class="flex gap-4">
-                                <input type="number" id="minAge" placeholder="Min" min="14" max="35" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
-                                <input type="number" id="maxAge" placeholder="Max" min="14" max="35" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <div class="mb-4 lg:mb-6">
+                            <label class="block text-sm font-semibold text-gray-700 mb-2 lg:mb-3">Age Range</label>
+                            <div class="flex gap-2 lg:gap-4">
+                                <input type="number" id="minAge" placeholder="Min" min="14" max="35" class="flex-1 px-3 lg:px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-sm lg:text-base">
+                                <input type="number" id="maxAge" placeholder="Max" min="14" max="35" class="flex-1 px-3 lg:px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-sm lg:text-base">
                             </div>
                         </div>
 
                         <!-- Primary Role Filter -->
-                        <div class="mb-6">
-                            <label class="block text-sm font-semibold text-gray-700 mb-3">Primary Role</label>
+                        <div class="mb-4 lg:mb-6">
+                            <label class="block text-sm font-semibold text-gray-700 mb-2 lg:mb-3">Primary Role</label>
                             <div class="space-y-2">
                                 <label class="flex items-center">
                                     <input type="checkbox" class="role-filter h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded" data-role="Batsman">
@@ -186,9 +186,9 @@
                         </div>
 
                         <!-- Skills Filter -->
-                        <div class="mb-6">
-                            <label class="block text-sm font-semibold text-gray-700 mb-3">Skills</label>
-                            <div class="space-y-2 max-h-48 overflow-y-auto">
+                        <div class="mb-4 lg:mb-6">
+                            <label class="block text-sm font-semibold text-gray-700 mb-2 lg:mb-3">Skills</label>
+                            <div class="space-y-2 max-h-32 lg:max-h-48 overflow-y-auto">
                                 <label class="flex items-center">
                                     <input type="checkbox" class="skill-filter h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded" data-skill="Power Hitter">
                                     <span class="ml-2 text-gray-700">Power Hitter</span>
@@ -225,30 +225,32 @@
                         </div>
 
                         <!-- Clear Filters Button -->
-                        <button id="clearFilters" class="w-full px-4 py-3 bg-gray-100 text-gray-700 rounded-xl font-semibold hover:bg-gray-200 transition-colors">
+                        <button id="clearFilters" class="w-full px-3 lg:px-4 py-2 lg:py-3 bg-gray-100 text-gray-700 rounded-xl font-semibold hover:bg-gray-200 transition-colors text-sm lg:text-base">
                             Clear All Filters
                         </button>
                     </div>
                 </div>
 
                 <!-- Main Content Area -->
-                <div id="mainContent" class="flex-1 transition-all duration-300 ease-in-out">
+                <div id="mainContent" class="flex-1 min-w-0 transition-all duration-300 ease-in-out">
                     <!-- Results Header -->
-                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
-                        <div>
-                            <h2 class="text-2xl font-bold text-gray-900">Search Results</h2>
-                            <p class="text-gray-600 mt-1">Found <span id="resultsCount" class="font-semibold text-green-600">9</span> talented players</p>
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 lg:mb-6 gap-4">
+                        <div class="flex-1 min-w-0">
+                            <h2 class="text-xl lg:text-2xl font-bold text-gray-900">Search Results</h2>
+                            <p class="text-sm lg:text-base text-gray-600 mt-1">Found <span id="resultsCount" class="font-semibold text-green-600">9</span> talented players</p>
                         </div>
-                        <select id="sortSelect" class="mt-4 sm:mt-0 px-4 py-2 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white">
-                            <option value="recent">Sort by: Most Recent</option>
-                            <option value="age-low">Sort by: Age (Low to High)</option>
-                            <option value="age-high">Sort by: Age (High to Low)</option>
-                            <option value="location">Sort by: Location</option>
-                        </select>
+                        <div class="w-full sm:w-auto">
+                            <select id="sortSelect" class="w-full sm:w-auto px-3 lg:px-4 py-2 lg:py-2 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-sm lg:text-base">
+                                <option value="recent">Sort by: Most Recent</option>
+                                <option value="age-low">Sort by: Age (Low to High)</option>
+                                <option value="age-high">Sort by: Age (High to Low)</option>
+                                <option value="location">Sort by: Location</option>
+                            </select>
+                        </div>
                     </div>
 
                     <!-- Player Cards Grid -->
-                    <div id="playerGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div id="playerGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-6">
                         <!-- Player Card 1 -->
                         <div class="player-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2" 
                              data-name="Alex Thompson" data-age="18" data-location="London" data-role="All-Rounder" data-skills="Power Hitter,Yorker Expert">
@@ -881,14 +883,14 @@
                 
                 if (filtersVisible) {
                     // Show filters
-                    filterSidebar.classList.remove('-translate-x-full', 'opacity-0');
-                    filterSidebar.classList.add('translate-x-0', 'opacity-100');
+                    filterSidebar.classList.remove('-translate-x-full', 'opacity-0', 'lg:-translate-x-full', 'lg:opacity-0');
+                    filterSidebar.classList.add('translate-x-0', 'opacity-100', 'lg:translate-x-0', 'lg:opacity-100');
                     filterToggleText.textContent = 'Hide Filters';
                     filterToggleIcon.style.transform = 'rotate(180deg)';
                 } else {
                     // Hide filters
-                    filterSidebar.classList.remove('translate-x-0', 'opacity-100');
-                    filterSidebar.classList.add('-translate-x-full', 'opacity-0');
+                    filterSidebar.classList.remove('translate-x-0', 'opacity-100', 'lg:translate-x-0', 'lg:opacity-100');
+                    filterSidebar.classList.add('-translate-x-full', 'opacity-0', 'lg:-translate-x-full', 'lg:opacity-0');
                     filterToggleText.textContent = 'Show Filters';
                     filterToggleIcon.style.transform = 'rotate(0deg)';
                 }
